@@ -1,7 +1,10 @@
 #include "common.h"
 
 int main(int argc, char **argv) {
-	platform_init();
+	if(!platform_init()) {
+		return 0;
+	}
+
 	while(platform_is_running()) {
 		input_poll();
 		if(input_is_pressed(BUTTON_START)) {
@@ -12,7 +15,7 @@ int main(int argc, char **argv) {
 
 		screen_swap_buffers();
 	}
-	
+
 	platform_cleanup();
 	return 0;
 }
