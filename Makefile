@@ -62,8 +62,8 @@ LIBS	:= -lctru -lm
 #---------------------------------------------------------------------------------
 LIBDIRS	:= $(CTRULIB) ./lib
 
-MAKEROM = $(TOPDIR)/tools/makerom
-CREATE_BANNER = python $(TOPDIR)/tools/create_banner.py
+MAKEROM    = $(TOPDIR)/tools/makerom
+BANNERTOOL = $(TOPDIR)/tools/bannertool
 
 
 #---------------------------------------------------------------------------------
@@ -148,7 +148,7 @@ $(OUTPUT).3dsx	:	$(OUTPUT).elf
 $(OUTPUT).elf	:	$(OFILES)
 
 banner.bnr: $(TOPDIR)/resources/banner.png $(TOPDIR)/resources/audio.bcwav
-	$(CREATE_BANNER) $(TOPDIR)/resources/banner.png $(TOPDIR)/resources/audio.bcwav $(TOPDIR)/$(BUILD)/banner.bnr
+	$(BANNERTOOL) $(TOPDIR)/resources/banner.png $(TOPDIR)/resources/audio.bcwav $(TOPDIR)/$(BUILD)/banner.bnr
 	@echo "built ... banner"
 
 stripped.elf: $(OUTPUT).elf
