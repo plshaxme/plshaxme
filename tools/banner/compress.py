@@ -4,7 +4,8 @@ from sys import stderr
 
 from collections import defaultdict
 from operator import itemgetter
-from struct import pack, unpack
+from struct import pack
+from io import BytesIO
 
 class SlidingWindow:
     # The size of the sliding window
@@ -186,6 +187,11 @@ def compress(input, out):
     padding = 4 - (length % 4 or 4)
     if padding:
         out.write(b'\xff' * padding)
+
+def compress_nlz11_to_bytes(input):
+    out = BytesIO()
+    compress_nlz11(input, out)
+    return out.getvalue()
 
 def compress_nlz11(input, out):
     # header
