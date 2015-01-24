@@ -1,7 +1,7 @@
 BasicInfo:
-  Title                   : "Homebrew Template"
+  Title                   : "{APP_TITLE}"
   CompanyCode             : "00"
-  ProductCode             : "CTR-P-TEMP"
+  ProductCode             : "{APP_PRODUCT_CODE}"
   ContentType             : Application
   Logo                    : Nintendo # Nintendo / Licensed / Distributed / iQue / iQueForSystem
 
@@ -11,7 +11,7 @@ BasicInfo:
 
 
 TitleInfo:
-  UniqueId                : 0x1929
+  UniqueId                : {APP_UNIQUE_ID}
   Category                : Application
   
 CardInfo:
@@ -139,6 +139,7 @@ AccessControlInfo:
    - $hostio0
    - $hostio1
    - ac:u
+   - am:u
    - boss:U
    - cam:u
    - cecd:u
