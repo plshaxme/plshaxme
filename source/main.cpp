@@ -11,7 +11,9 @@ int main(int argc, char **argv) {
 			break;
 		}
 
-		// Do stuff!
+		screen_begin_draw_info();
+		screen_draw_string("Hello world!", 0, 0, 255, 255, 255);
+		screen_end_draw();
 
 		screen_swap_buffers();
 	}
