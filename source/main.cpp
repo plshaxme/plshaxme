@@ -1,4 +1,4 @@
-#include "common.h"
+#include "common.hpp"
 
 int main(int argc, char **argv) {
 	if(!platform_init()) {
@@ -11,8 +11,8 @@ int main(int argc, char **argv) {
 			break;
 		}
 
-		screen_begin_draw_info();
-		screen_draw_string("Hello world!", 0, 0, 255, 255, 255);
+		screen_begin_draw(TOP_SCREEN);
+		screen_draw_string("Hello world!", (screen_get_width() - screen_get_str_width("Hello world!")) / 2, (screen_get_height() - screen_get_str_height("Hello world!")) / 2, 255, 255, 255);
 		screen_end_draw();
 
 		screen_swap_buffers();
