@@ -1,4 +1,4 @@
-#include "common.hpp"
+#include <ctrcommon/common.hpp>
 
 int main(int argc, char **argv) {
 	if(!platform_init()) {

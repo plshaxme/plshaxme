@@ -5,4 +5,4 @@
 
 Download: LinkGoesHere
 
-Requires [devkitARM](http://sourceforge.net/projects/devkitpro/files/devkitARM/) to build.
+Requires [devkitARM](http://sourceforge.net/projects/devkitpro/files/devkitARM/) and [ctrcommon](https://github.com/Steveice10/ctrcommon) to build.
