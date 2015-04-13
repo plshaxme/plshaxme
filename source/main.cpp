@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 
     while(platformIsRunning()) {
         inputPoll();
-        if(inputIsPressed(BUTTON_START)) {
+        if(inputIsPressed(BUTTON_START) && platformIsNinjhax()) {
             break;
         }
 
