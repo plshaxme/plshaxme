@@ -9,6 +9,8 @@ int main(int argc, char **argv) {
 
     const std::string message = "Hello world!";
 
+    gpuViewport(TOP_SCREEN, 0, 0, TOP_WIDTH, TOP_HEIGHT);
+    gputOrtho(0, TOP_WIDTH, 0, TOP_HEIGHT, -1, 1);
     gpuClearColor(0xFF, 0xFF, 0xFF, 0xFF);
     while(platformIsRunning()) {
         inputPoll();
@@ -17,7 +19,7 @@ int main(int argc, char **argv) {
         }
 
         gpuClear();
-        gputDrawString(message, (gpuGetViewportWidth() - gputGetStringWidth(message, 2)) / 2, (gpuGetViewportHeight() - gputGetStringHeight(message, 2)) / 2, 2, 0, 0, 0);
+        gputDrawString(message, (gpuGetViewportWidth() - gputGetStringWidth(message, 16)) / 2, (gpuGetViewportHeight() - gputGetStringHeight(message, 16)) / 2, 16, 16, 0, 0, 0);
         gpuFlush();
         gpuFlushBuffer();
         gpuSwapBuffers(true);
