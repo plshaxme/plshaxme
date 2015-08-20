@@ -1,5 +1,4 @@
-<b><center>HomebrewTemplate</center></b>
-==========
+# HomebrewTemplate
 
 3DS homebrew template.
 
