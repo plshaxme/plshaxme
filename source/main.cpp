@@ -10,8 +10,8 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    gpu::setViewport(gpu::SCREEN_TOP, 0, 0, TOP_WIDTH, TOP_HEIGHT);
-    gput::setOrtho(0, TOP_WIDTH, 0, TOP_HEIGHT, -1, 1);
+    gpu::setViewport(gpu::SCREEN_TOP, 0, 0, gpu::TOP_WIDTH, gpu::TOP_HEIGHT);
+    gput::setOrtho(0, gpu::TOP_WIDTH, 0, gpu::TOP_HEIGHT, -1, 1);
 
     const std::string message = "Hello world!";
     while(ctr::core::running()) {
@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
         }
 
         gpu::clear();
-        gput::drawString(message, (TOP_WIDTH - gput::getStringWidth(message, 16)) / 2, (TOP_HEIGHT - gput::getStringHeight(message, 16)) / 2, 16, 16);
+        gput::drawString(message, (gpu::TOP_WIDTH - gput::getStringWidth(message, 16)) / 2, (gpu::TOP_HEIGHT - gput::getStringHeight(message, 16)) / 2, 16, 16);
         gpu::flushCommands();
         gpu::flushBuffer();
         gpu::swapBuffers(true);
