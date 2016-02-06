@@ -32,6 +32,7 @@ RUN_FLAGS :=
 
 # 3DS CONFIGURATION #
 
+TITLE := $(NAME)
 DESCRIPTION := 3DS homebrew template.
 AUTHOR := Steveice10
 PRODUCT_CODE := CTR-P-TEMP
@@ -39,6 +40,8 @@ UNIQUE_ID := 0xF8000
 
 SYSTEM_MODE := 64MB
 SYSTEM_MODE_EXT := Legacy
+
+ICON_FLAGS :=
 
 ROMFS_DIR :=
 BANNER_AUDIO := meta/audio.wav
