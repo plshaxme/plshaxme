@@ -1,21 +1,17 @@
 # TARGET #
 
-TARGET := 3DS
+TARGET := PC
 LIBRARY := 0
 
-ifeq ($(TARGET),3DS)
+ifeq ($(TARGET),$(filter $(TARGET),3DS WIIU))
     ifeq ($(strip $(DEVKITPRO)),)
         $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>devkitPro")
-    endif
-
-    ifeq ($(strip $(DEVKITARM)),)
-        $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
     endif
 endif
 
 # COMMON CONFIGURATION #
 
-NAME := 3DSHomebrewTemplate
+NAME := BuildTemplate
 
 BUILD_DIR := build
 OUTPUT_DIR := output
@@ -24,29 +20,50 @@ SOURCE_DIRS := source
 
 EXTRA_OUTPUT_FILES :=
 
-LIBRARY_DIRS := $(DEVKITPRO)/citrus $(DEVKITPRO)/libctru
-LIBRARIES := citrus ctru m
+LIBRARY_DIRS :=
+LIBRARIES :=
 
 BUILD_FLAGS :=
 RUN_FLAGS :=
 
+# 3DS/Wii U CONFIGURATION #
+
+ifeq ($(TARGET),$(filter $(TARGET),3DS WIIU))
+    TITLE := Build Template
+    DESCRIPTION := Build template.
+    AUTHOR := Steveice10
+endif
+
 # 3DS CONFIGURATION #
 
-TITLE := $(NAME)
-DESCRIPTION := 3DS homebrew template.
-AUTHOR := Steveice10
-PRODUCT_CODE := CTR-P-TEMP
-UNIQUE_ID := 0xF8000
+ifeq ($(TARGET),3DS)
+    LIBRARY_DIRS += $(DEVKITPRO)/libctru
+    LIBRARIES += ctru
 
-SYSTEM_MODE := 64MB
-SYSTEM_MODE_EXT := Legacy
+    PRODUCT_CODE := CTR-P-TEMP
+    UNIQUE_ID := 0xF8000
 
-ICON_FLAGS :=
+    SYSTEM_MODE := 64MB
+    SYSTEM_MODE_EXT := Legacy
 
-ROMFS_DIR :=
-BANNER_AUDIO := meta/audio.wav
-BANNER_IMAGE := meta/banner.png
-ICON := meta/icon.png
+    ICON_FLAGS :=
+
+    ROMFS_DIR :=
+    BANNER_AUDIO := meta/audio_3ds.wav
+    BANNER_IMAGE := meta/banner_3ds.png
+    ICON := meta/icon_3ds.png
+endif
+
+# Wii U CONFIGURATION #
+
+ifeq ($(TARGET),WIIU)
+    LIBRARY_DIRS +=
+    LIBRARIES +=
+
+    LONG_DESCRIPTION := Build template.
+    VERSION := Dev
+    ICON := meta/icon_wiiu.png
+endif
 
 # INTERNAL #
 
