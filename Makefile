@@ -1,6 +1,6 @@
 # TARGET #
 
-TARGET := PC
+TARGET := NATIVE
 LIBRARY := 0
 
 ifeq ($(TARGET),$(filter $(TARGET),3DS WIIU))
@@ -43,8 +43,14 @@ ifeq ($(TARGET),3DS)
     PRODUCT_CODE := CTR-P-TEMP
     UNIQUE_ID := 0xF8000
 
+    CATEGORY := Application
+    USE_ON_SD := true
+
+    MEMORY_TYPE := Application
     SYSTEM_MODE := 64MB
     SYSTEM_MODE_EXT := Legacy
+    CPU_SPEED := 804MHz
+    ENABLE_L2_CACHE := true
 
     ICON_FLAGS :=
 
