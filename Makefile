@@ -1,6 +1,6 @@
 # TARGET #
 
-TARGET := NATIVE
+TARGET := ALL
 LIBRARY := 0
 
 ifeq ($(TARGET),$(filter $(TARGET),3DS WIIU))
