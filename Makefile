@@ -49,7 +49,7 @@ ifeq ($(TARGET),3DS)
     MEMORY_TYPE := Application
     SYSTEM_MODE := 64MB
     SYSTEM_MODE_EXT := Legacy
-    CPU_SPEED := 804MHz
+    CPU_SPEED := 268MHz
     ENABLE_L2_CACHE := true
 
     ICON_FLAGS :=
