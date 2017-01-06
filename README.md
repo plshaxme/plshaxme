@@ -1,5 +1,5 @@
-# HomebrewTemplate
+# BuildTemplate
 
-3DS homebrew template.
+buildtools project template.
 
-Requires [citrus](https://github.com/Steveice10/citrus) and its dependencies to build.
+Requires [devkitARM](http://sourceforge.net/projects/devkitpro/files/devkitARM/) to build for 3DS, and [devkitPPC](http://sourceforge.net/projects/devkitpro/files/devkitPPC/) to build for Wii U.
