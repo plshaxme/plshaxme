@@ -11,7 +11,7 @@ endif
 
 # COMMON CONFIGURATION #
 
-NAME := BuildTemplate
+NAME := Build Template
 
 BUILD_DIR := build
 OUTPUT_DIR := output
@@ -33,7 +33,7 @@ VERSION_MICRO := 0
 # 3DS/Wii U CONFIGURATION #
 
 ifeq ($(TARGET),$(filter $(TARGET),3DS WIIU))
-    TITLE := Build Template
+    TITLE := $(NAME)
     DESCRIPTION := Build template.
     AUTHOR := Steveice10
 endif
