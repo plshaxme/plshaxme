@@ -71,7 +71,6 @@ ifeq ($(TARGET),WIIU)
     LIBRARIES +=
 
     LONG_DESCRIPTION := Build template.
-    VERSION := Dev
     ICON := meta/icon_wiiu.png
 endif
 
