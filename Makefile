@@ -24,6 +24,8 @@ LIBRARY_DIRS :=
 LIBRARIES :=
 
 BUILD_FLAGS :=
+BUILD_FLAGS_CC :=
+BUILD_FLAGS_CXX :=
 RUN_FLAGS :=
 
 VERSION_MAJOR := 0
@@ -62,6 +64,7 @@ ifeq ($(TARGET),3DS)
     BANNER_AUDIO := meta/audio_3ds.wav
     BANNER_IMAGE := meta/banner_3ds.png
     ICON := meta/icon_3ds.png
+    LOGO :=
 endif
 
 # Wii U CONFIGURATION #
