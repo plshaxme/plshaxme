@@ -60,7 +60,7 @@ r2 = where - 12
 
 UNICODE_MARKER = '\xff\xfe' # unicode marker
 
-exp = "<\x003\x00 \x00n\x00e\x00d\x00w\x00i\x00l\x00l\x00 \x002\x000\x001\x006\x00"
+exp = "h\x00a\x00x\x00p\x00l\x00s\x00 \x00I\x00n\x00s\x00t\x00a\x00l\x00l\x00e\x00r\x00"
 exp += " \x00"*((772-len(exp)) / 2)
 assert len(exp) == 772
 
@@ -198,7 +198,7 @@ l = [('ftyp', '4d344120000000004d3441206d70343269736f6d00000000'),
                 ('hdlr', '00000000000000006d6469726170706c000000000000000000'),
                 ('ilst',
                     [('\xa9nam', [('data', '0000000100000000' + (UNICODE_MARKER + exp).encode("hex"))]),
-                     ('\xa9ART', [('data', '00000001000000004e6564')]),
+                     ('\xa9ART', [('data', '00000001000000006c656f')]),
                      ('\xa9alb', [('data', '00000001000000004e696e74656e646f2033445320536f756e64')]),
                      ('\xa9day', [('data', '000000010000000032303030')]),
                      ('edoc', [('data', '00000001000000003344533100')]),
@@ -243,10 +243,10 @@ def to_string(tree):
     return res
 
 if TYPE == "new":
-    fn = './soundhax-{}-{}.m4a'.format(REGION, "n3ds")
+    fn = './haxpls-{}-{}.m4a'.format(REGION, "n3ds")
 else:
     assert TYPE == "old"
-    fn = './soundhax-{}-{}.m4a'.format(REGION, "o3ds")
+    fn = './haxpls-{}-{}.m4a'.format(REGION, "o3ds")
 
 with open(fn, 'wb') as f:
   f.write(to_string(l))

@@ -90,7 +90,6 @@ _start:
 /* Red screen. */
     ldr  r0, =0xFF0000FF
     bl   framebuffer_fill
-/* Tell GSP thread to fuck off. */
     ldr  r0, =GSP_THREAD_OBJ_PTR
 #if defined(KOR)
     ldr  r0, [r0,#GSP_THREAD_OBJ_PTR_OFFSET]
@@ -164,7 +163,7 @@ forever:
 
 .pool
 otherapp_str:
-    .string16 "$sndsd:/otherapp.bin\0"
+    .string16 "$sndsd:/haxpls/otherapp.bin\0"
     .align 4
 
 /* memcpy32: Copy r2 bytes from r1 to r0, 32 bits at a time. */
