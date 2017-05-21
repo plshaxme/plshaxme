@@ -20,31 +20,15 @@ int main()
     aptInit();
     initFilesystem();
     openSDArchive();
-    hidInit(NULL);
 
     // offset potential issues caused by homebrew that just ran
     aptOpenSession();
     APT_SetAppCpuTimeLimit(NULL, 0);
     aptCloseSession();
 
-    hidScanInput();
-
     char *execPath;
-    u32 key = hidKeysDown();
 
-    // to add a new entry, just copy the "case...break" lines and
-    // change the "case" and "execPath" lines for the desired entry
-    // or use the provided example below
-    switch (key) {
-        case KEY_R:
-            execPath = "/boot_2.3dsx";
-            break;
-        /* case KEY_L:
-            execPath = "/boot_3.3dsx";
-            break; */
-        default:
-            execPath = "/boot_1.3dsx";
-            break;
+    execPath = "/hpls/installer.3dsx";
     }
 
     // cleanup whatever we have to cleanup
